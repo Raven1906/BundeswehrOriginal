@@ -1,76 +1,75 @@
 :root{
-  --bg:#0a0f1c;
-  --bg2:#121a2f;
-  --card:#151d33;
-  --border:#2a3554;
+  --bg:#0b0f14;
+  --bg2:#141a20;
 
-  --text:#e6e8ee;
-  --muted:#a3adc2;
+  --camo1:#2f3e2f;
+  --camo2:#3b4a36;
+  --camo3:#1f2a1f;
+  --sand:#8b7d5a;
 
-  --blue:#3b82f6;
-  --amber:#f59e0b;
-  --olive:#6b8e23;
+  --text:#e5e7eb;
+  --muted:#b6b8b2;
 }
 
 /* RESET */
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:"Inter",system-ui,sans-serif;
+  font-family:Inter,system-ui,sans-serif;
   color:var(--text);
   background:
-    radial-gradient(900px 500px at 80% -10%,rgba(59,130,246,.12),transparent),
-    radial-gradient(600px 400px at 10% 90%,rgba(245,158,11,.08),transparent),
+    radial-gradient(800px 400px at 20% 10%,rgba(47,62,47,.6),transparent),
+    radial-gradient(700px 500px at 80% 90%,rgba(59,74,54,.6),transparent),
     linear-gradient(180deg,var(--bg),var(--bg2));
   overflow-x:hidden;
 }
 
-/* ANIMATED GRID / MAP PATTERN */
+/* CAMO PATTERN (ANIMIERT!) */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   z-index:-1;
-  opacity:.18;
+  opacity:.35;
   background-image:
-    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
-  background-size:60px 60px;
-  animation:mapMove 50s linear infinite;
+    radial-gradient(circle at 20% 30%,var(--camo1) 20%,transparent 22%),
+    radial-gradient(circle at 60% 40%,var(--camo2) 18%,transparent 20%),
+    radial-gradient(circle at 40% 70%,var(--camo3) 22%,transparent 24%),
+    radial-gradient(circle at 80% 60%,var(--sand) 10%,transparent 12%);
+  background-size:400px 400px;
+  animation:camoDrift 60s linear infinite;
 }
 
-@keyframes mapMove{
-  from{transform:translateY(0)}
-  to{transform:translateY(60px)}
+@keyframes camoDrift{
+  from{transform:translate(0,0)}
+  to{transform:translate(-200px,200px)}
 }
 
 /* HEADER */
 header{
   position:sticky;
   top:0;
-  z-index:10;
-  background:rgba(10,15,28,.8);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);
+  background:rgba(11,15,20,.85);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 nav{
-  max-width:1200px;
+  max-width:1100px;
   margin:auto;
   padding:1rem 1.5rem;
   display:flex;
-  gap:.6rem;
+  gap:.5rem;
 }
 
 nav button{
   background:none;
-  border:1px solid transparent;
+  border:none;
   color:var(--muted);
-  padding:.6rem 1.1rem;
+  padding:.6rem 1rem;
+  cursor:pointer;
   font-size:.95rem;
   letter-spacing:.3px;
-  cursor:pointer;
-  transition:.3s;
   position:relative;
 }
 
@@ -79,9 +78,8 @@ nav button::after{
   position:absolute;
   left:0;right:0;bottom:-6px;
   height:2px;
-  background:linear-gradient(90deg,var(--blue),var(--amber));
-  opacity:0;
-  transform:scaleX(.3);
+  background:linear-gradient(90deg,var(--camo1),var(--sand));
+  transform:scaleX(0);
   transition:.3s;
 }
 
@@ -90,7 +88,6 @@ nav button:hover{
 }
 
 nav button:hover::after{
-  opacity:1;
   transform:scaleX(1);
 }
 
@@ -101,65 +98,42 @@ main{
   padding:3rem 1.5rem 6rem;
 }
 
-/* CONTENT SECTIONS */
+/* SECTION */
 .section{
-  background:
-    linear-gradient(180deg,rgba(255,255,255,.03),transparent),
-    var(--card);
-  border:1px solid var(--border);
-  padding:2.8rem;
-  margin-bottom:3.5rem;
+  background:rgba(20,26,32,.85);
+  border:1px solid rgba(255,255,255,.1);
+  padding:3rem;
+  margin-bottom:4rem;
   position:relative;
-  overflow:hidden;
-  animation:fadeUp .8s ease both;
+  animation:reveal .8s ease both;
 }
 
-/* animated accent stripe */
-.section::before{
-  content:"";
-  position:absolute;
-  top:0;left:0;
-  width:6px;
-  height:100%;
-  background:linear-gradient(180deg,var(--blue),var(--olive),var(--amber));
-  opacity:.8;
+/* Seiten-spezifische Akzente */
+.section.overview{border-left:6px solid var(--camo1)}
+.section.auftrag{border-left:6px solid var(--sand)}
+.section.struktur{border-left:6px solid var(--camo2)}
+.section.einsatz{border-left:6px solid #6b7280}
+.section.zukunft{border-left:6px solid #9ca3af}
+
+/* Inhalt Animation */
+@keyframes reveal{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:none}
 }
 
-/* floating light */
-.section::after{
-  content:"";
-  position:absolute;
-  inset:-40%;
-  background:radial-gradient(circle,rgba(59,130,246,.08),transparent 60%);
-  animation:floatLight 18s linear infinite;
-  pointer-events:none;
-}
-
-@keyframes floatLight{
-  from{transform:translate(-10%,-10%)}
-  to{transform:translate(10%,10%)}
-}
-
-/* TYPO */
 .section h1{
   margin-top:0;
-  font-size:2.3rem;
-  letter-spacing:.4px;
+  font-size:2.4rem;
 }
 
 .section h2{
   margin-top:2.5rem;
   font-size:1.4rem;
-  color:#cbd5e1;
+  color:#d1d5db;
 }
 
 .section p{
-  margin:1.1rem 0;
+  margin:1.2rem 0;
   color:var(--muted);
-}
-
-/* REVEAL */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:none}
+  line-height:1.85;
 }
