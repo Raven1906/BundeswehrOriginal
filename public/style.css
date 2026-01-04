@@ -1,0 +1,56 @@
+:root{
+  --bg:#05070f;
+  --bg2:#0b1120;
+  --card:#0f172a;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --info:#38bdf8;
+}
+
+body{
+  margin:0;
+  font-family:system-ui;
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
+  color:var(--text);
+}
+
+header{
+  position:sticky;
+  top:0;
+  background:rgba(5,7,15,.8);
+  backdrop-filter:blur(10px);
+}
+
+nav{
+  padding:10px;
+}
+
+nav button{
+  background:none;
+  border:none;
+  color:var(--muted);
+  padding:10px 14px;
+  cursor:pointer;
+}
+
+nav button:hover{
+  color:var(--text);
+}
+
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:3rem 1.5rem;
+}
+
+.card{
+  background:var(--card);
+  padding:2rem;
+  border-radius:18px;
+  animation:fade .4s ease;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:none}
+}
