@@ -1,128 +1,138 @@
 const content = document.getElementById("content");
 
 const pages = {
-  home: `
-    <div class="card">
-      <h1>Einführung</h1>
-      <p>
-        Sicherheit ist keine Selbstverständlichkeit. In einer Welt, die sich
-        politisch, technologisch und gesellschaftlich immer schneller verändert,
-        steht jede moderne Gesellschaft vor der Frage, wie sie Freiheit, Frieden
-        und Stabilität langfristig sichern kann.
-      </p>
-      <p>
-        Diese Seite bietet einen umfassenden Überblick über sicherheitspolitische
-        Verantwortung, staatliche Strukturen und die Rolle moderner Streitkräfte
-        im 21. Jahrhundert. Sie richtet sich an Leserinnen und Leser, die sich
-        tiefergehend informieren möchten – sachlich, ruhig und ohne Verkürzungen.
-      </p>
-      <p>
-        Die Inhalte sind bewusst ausführlich gehalten. Sie sollen zum Lesen,
-        Nachdenken und Einordnen anregen – nicht zum schnellen Überfliegen.
-      </p>
-    </div>
-  `,
+  overview: `
+    <section class="section">
+      <h1>Überblick</h1>
 
-  geschichte: `
-    <div class="card">
-      <h1>Geschichte und Entwicklung</h1>
       <p>
-        Nach den Erfahrungen des 20. Jahrhunderts stand Deutschland vor der
-        Herausforderung, Sicherheit neu zu denken. Die Lehren aus Krieg,
-        Diktatur und Missbrauch staatlicher Macht führten zu einem besonderen
-        Verständnis von Verantwortung und Kontrolle.
+        Sicherheit ist eine zentrale Voraussetzung für Stabilität, Freiheit
+        und gesellschaftliche Entwicklung. Sie entsteht nicht von selbst,
+        sondern ist das Ergebnis politischer Entscheidungen, institutioneller
+        Verantwortung und gesellschaftlicher Akzeptanz.
       </p>
+
       <p>
-        Die Entwicklung moderner Sicherheitsstrukturen war deshalb von Beginn
-        an eng mit demokratischen Prinzipien verbunden. Parlamentsvorbehalt,
-        Gewaltenteilung und gesellschaftliche Kontrolle bilden bis heute das
-        Fundament sicherheitspolitischen Handelns.
+        In einer zunehmend vernetzten Welt haben sich die Rahmenbedingungen
+        staatlicher Sicherheit grundlegend verändert. Klassische Bedrohungen
+        existieren weiterhin, werden jedoch ergänzt durch neue Herausforderungen
+        wie Cyberangriffe, hybride Einflussnahme und globale Abhängigkeiten.
       </p>
+
       <p>
-        Über Jahrzehnte hinweg veränderten sich Aufgaben, Ausrichtung und
-        internationale Einbindung stetig – immer im Spannungsfeld zwischen
-        nationaler Verantwortung und internationaler Zusammenarbeit.
+        Diese Seite verfolgt das Ziel, sicherheitspolitische Zusammenhänge
+        verständlich, sachlich und ohne Verkürzung darzustellen. Sie richtet
+        sich an Leserinnen und Leser, die bereit sind, sich Zeit zu nehmen
+        und Zusammenhänge in ihrer Tiefe zu erfassen.
       </p>
-    </div>
+
+      <h2>Einordnung</h2>
+
+      <p>
+        Staatliche Sicherheitsstrukturen sind immer im Spannungsfeld zwischen
+        Schutz und Zurückhaltung angesiedelt. Ihre Legitimität ergibt sich
+        nicht aus Stärke, sondern aus rechtlicher Bindung, Transparenz und
+        demokratischer Kontrolle.
+      </p>
+
+      <p>
+        Gerade in Deutschland ist dieses Verständnis historisch gewachsen
+        und fest im politischen System verankert. Sicherheit wird nicht als
+        Machtinstrument verstanden, sondern als Dienst an der Gesellschaft.
+      </p>
+    </section>
   `,
 
   auftrag: `
-    <div class="card">
-      <h1>Auftrag und Verfassung</h1>
+    <section class="section">
+      <h1>Auftrag & Werte</h1>
+
       <p>
-        Staatliche Sicherheitsorgane handeln nicht aus eigenem Antrieb.
-        Ihr Auftrag ist rechtlich klar definiert und an die Verfassung gebunden.
-        Dies dient dem Schutz der Gesellschaft vor Machtmissbrauch und Willkür.
+        Der staatliche Sicherheitsauftrag ist klar begrenzt und verfassungsrechtlich
+        definiert. Er dient dem Schutz der Bevölkerung, der territorialen
+        Integrität und der freiheitlich-demokratischen Grundordnung.
       </p>
+
       <p>
-        Zentrale Elemente sind Transparenz, parlamentarische Kontrolle und
-        die Einbindung in demokratische Entscheidungsprozesse. Sicherheit
-        ist kein Selbstzweck, sondern Mittel zum Schutz von Freiheit und Recht.
+        Zentrale Werte sind Verantwortung, Rechtstreue und Verhältnismäßigkeit.
+        Jeder Einsatz staatlicher Mittel ist an klare Regeln gebunden und
+        unterliegt parlamentarischer Kontrolle.
       </p>
+
       <p>
-        Diese rechtlichen Rahmenbedingungen sind bewusst restriktiv gestaltet
-        und unterscheiden sich deutlich von autoritären Modellen.
+        Diese Prinzipien unterscheiden demokratische Sicherheitsstrukturen
+        grundlegend von autoritären Systemen.
       </p>
-    </div>
+    </section>
   `,
 
-  sicherheit: `
-    <div class="card">
-      <h1>Innere und äußere Sicherheit</h1>
+  struktur: `
+    <section class="section">
+      <h1>Struktur & Bereiche</h1>
+
       <p>
-        Sicherheit endet nicht an Landesgrenzen. Globale Vernetzung, digitale
-        Infrastruktur und internationale Abhängigkeiten machen eine klare
-        Trennung zwischen innerer und äußerer Sicherheit zunehmend schwierig.
+        Moderne Sicherheitsorganisationen sind komplex aufgebaut. Unterschiedliche
+        Teilbereiche übernehmen spezialisierte Aufgaben – von Landes- und
+        Bündnisverteidigung bis hin zu Unterstützung im Katastrophenfall.
       </p>
+
       <p>
-        Gleichzeitig bleibt der Schutz der eigenen Bevölkerung oberste Priorität.
-        Prävention, Abschreckung und Kooperation sind dabei keine Gegensätze,
-        sondern ergänzende Elemente.
+        Die klare Trennung von Zuständigkeiten sorgt für Effizienz und verhindert
+        Machtkonzentration.
       </p>
+    </section>
+  `,
+
+  einsatz: `
+    <section class="section">
+      <h1>Einsätze & Verantwortung</h1>
+
       <p>
-        Moderne Sicherheitskonzepte setzen daher auf vernetzte Ansätze, bei denen
-        militärische, politische und gesellschaftliche Faktoren zusammenwirken.
+        Einsätze außerhalb des eigenen Staatsgebiets sind immer mit besonderer
+        Verantwortung verbunden. Sie erfolgen auf Grundlage internationaler
+        Mandate und politischer Beschlüsse.
       </p>
-    </div>
+
+      <p>
+        Neben militärischen Aspekten spielen humanitäre, diplomatische und
+        gesellschaftliche Faktoren eine zentrale Rolle.
+      </p>
+    </section>
   `,
 
   zukunft: `
-    <div class="card">
-      <h1>Zukunft und Herausforderungen</h1>
+    <section class="section">
+      <h1>Zukunft & Sicherheit</h1>
+
       <p>
-        Die sicherheitspolitischen Herausforderungen der Zukunft sind komplex.
-        Cyberangriffe, hybride Bedrohungen und technologische Abhängigkeiten
-        verändern klassische Vorstellungen von Konflikten.
+        Die sicherheitspolitischen Herausforderungen der Zukunft sind geprägt
+        von Unsicherheit, Geschwindigkeit und technologischer Entwicklung.
       </p>
+
       <p>
-        Gleichzeitig wächst die Verantwortung, ethische Grenzen zu definieren
-        und einzuhalten. Technologie darf Sicherheit unterstützen, aber nicht
-        ersetzen, was gesellschaftliche Werte ausmacht.
+        Entscheidend wird sein, Sicherheit so zu gestalten, dass sie schützt,
+        ohne Freiheit einzuschränken.
       </p>
-      <p>
-        Die zentrale Frage bleibt: Wie lässt sich Sicherheit gewährleisten,
-        ohne Freiheit zu gefährden? Eine Antwort darauf erfordert kontinuierlichen
-        Dialog und kritische Reflexion.
-      </p>
-    </div>
+    </section>
   `
 };
 
-function loadPage(page) {
+function loadPage(page){
   content.innerHTML = pages[page];
-  history.pushState({ page }, "", "#" + page);
+  history.pushState({page}, "", "#" + page);
 }
 
-document.querySelectorAll("button[data-page]").forEach(btn => {
-  btn.addEventListener("click", () => {
+document.querySelectorAll("button[data-page]").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
     loadPage(btn.dataset.page);
   });
 });
 
 window.onpopstate = e => {
-  if (e.state?.page) {
+  if(e.state?.page){
     content.innerHTML = pages[e.state.page];
   }
 };
 
-loadPage("home");
+loadPage("overview");
+
