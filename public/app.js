@@ -1,138 +1,159 @@
 const content = document.getElementById("content");
 
 const pages = {
-  overview: `
-    <section class="section">
-      <h1>Überblick</h1>
+overview: `
+<section class="section overview">
+<h1>Überblick</h1>
 
-      <p>
-        Sicherheit ist eine zentrale Voraussetzung für Stabilität, Freiheit
-        und gesellschaftliche Entwicklung. Sie entsteht nicht von selbst,
-        sondern ist das Ergebnis politischer Entscheidungen, institutioneller
-        Verantwortung und gesellschaftlicher Akzeptanz.
-      </p>
+<p>
+Sicherheit ist kein statischer Zustand, sondern ein fortlaufender Prozess.
+Sie entsteht aus dem Zusammenspiel politischer Entscheidungen, gesellschaftlicher
+Verantwortung und institutioneller Handlungsfähigkeit. In Deutschland ist dieses
+Verständnis historisch gewachsen und eng mit demokratischen Grundwerten verknüpft.
+</p>
 
-      <p>
-        In einer zunehmend vernetzten Welt haben sich die Rahmenbedingungen
-        staatlicher Sicherheit grundlegend verändert. Klassische Bedrohungen
-        existieren weiterhin, werden jedoch ergänzt durch neue Herausforderungen
-        wie Cyberangriffe, hybride Einflussnahme und globale Abhängigkeiten.
-      </p>
+<p>
+Das sicherheitspolitische Umfeld hat sich in den vergangenen Jahrzehnten tiefgreifend
+verändert. Klassische Bedrohungsszenarien bestehen weiterhin, werden jedoch zunehmend
+durch hybride Formen der Einflussnahme ergänzt. Dazu zählen Cyberoperationen,
+Desinformation, wirtschaftlicher Druck sowie die Instrumentalisierung politischer
+Instabilität.
+</p>
 
-      <p>
-        Diese Seite verfolgt das Ziel, sicherheitspolitische Zusammenhänge
-        verständlich, sachlich und ohne Verkürzung darzustellen. Sie richtet
-        sich an Leserinnen und Leser, die bereit sind, sich Zeit zu nehmen
-        und Zusammenhänge in ihrer Tiefe zu erfassen.
-      </p>
+<p>
+Diese Plattform verfolgt das Ziel, sicherheitspolitische Zusammenhänge sachlich,
+verständlich und ohne Verkürzungen darzustellen. Sie richtet sich an Leserinnen und
+Leser, die bereit sind, sich mit komplexen Themen auseinanderzusetzen und unterschiedliche
+Ebenen von Sicherheit – national, international und gesellschaftlich – zu reflektieren.
+</p>
 
-      <h2>Einordnung</h2>
+<h2>Gesellschaftliche Einbettung</h2>
 
-      <p>
-        Staatliche Sicherheitsstrukturen sind immer im Spannungsfeld zwischen
-        Schutz und Zurückhaltung angesiedelt. Ihre Legitimität ergibt sich
-        nicht aus Stärke, sondern aus rechtlicher Bindung, Transparenz und
-        demokratischer Kontrolle.
-      </p>
+<p>
+Sicherheitspolitik ist stets auch Gesellschaftspolitik. Sie erfordert Akzeptanz,
+Transparenz und eine klare rechtliche Grundlage. Staatliche Sicherheitsorgane handeln
+nicht im eigenen Interesse, sondern im Auftrag der Gesellschaft und unterliegen deren
+Kontrolle.
+</p>
+</section>
+`,
 
-      <p>
-        Gerade in Deutschland ist dieses Verständnis historisch gewachsen
-        und fest im politischen System verankert. Sicherheit wird nicht als
-        Machtinstrument verstanden, sondern als Dienst an der Gesellschaft.
-      </p>
-    </section>
-  `,
+auftrag: `
+<section class="section auftrag">
+<h1>Auftrag & Werte</h1>
 
-  auftrag: `
-    <section class="section">
-      <h1>Auftrag & Werte</h1>
+<p>
+Der staatliche Sicherheitsauftrag ist klar definiert und verfassungsrechtlich
+gebunden. Er dient dem Schutz der Bevölkerung, der territorialen Integrität
+und der freiheitlich-demokratischen Grundordnung. Dabei gilt stets der Grundsatz
+der Verhältnismäßigkeit.
+</p>
 
-      <p>
-        Der staatliche Sicherheitsauftrag ist klar begrenzt und verfassungsrechtlich
-        definiert. Er dient dem Schutz der Bevölkerung, der territorialen
-        Integrität und der freiheitlich-demokratischen Grundordnung.
-      </p>
+<p>
+Zentrale Werte sind Verantwortung, Rechtstreue und politische Zurückhaltung.
+Sicherheit darf niemals Selbstzweck sein, sondern muss sich stets an klaren
+rechtlichen und ethischen Maßstäben orientieren.
+</p>
 
-      <p>
-        Zentrale Werte sind Verantwortung, Rechtstreue und Verhältnismäßigkeit.
-        Jeder Einsatz staatlicher Mittel ist an klare Regeln gebunden und
-        unterliegt parlamentarischer Kontrolle.
-      </p>
+<p>
+Besondere Bedeutung kommt der parlamentarischen Kontrolle zu. Sie stellt sicher,
+dass sicherheitsrelevante Entscheidungen demokratisch legitimiert sind und
+transparent nachvollzogen werden können.
+</p>
 
-      <p>
-        Diese Prinzipien unterscheiden demokratische Sicherheitsstrukturen
-        grundlegend von autoritären Systemen.
-      </p>
-    </section>
-  `,
+<h2>Innere Führung</h2>
 
-  struktur: `
-    <section class="section">
-      <h1>Struktur & Bereiche</h1>
+<p>
+Das Leitbild der inneren Führung betont den mündigen, verantwortungsbewussten
+Staatsbürger in Uniform. Es verbindet militärische Auftragserfüllung mit
+gesellschaftlicher Verantwortung und individueller Gewissensfreiheit.
+</p>
+</section>
+`,
 
-      <p>
-        Moderne Sicherheitsorganisationen sind komplex aufgebaut. Unterschiedliche
-        Teilbereiche übernehmen spezialisierte Aufgaben – von Landes- und
-        Bündnisverteidigung bis hin zu Unterstützung im Katastrophenfall.
-      </p>
+struktur: `
+<section class="section struktur">
+<h1>Struktur</h1>
 
-      <p>
-        Die klare Trennung von Zuständigkeiten sorgt für Effizienz und verhindert
-        Machtkonzentration.
-      </p>
-    </section>
-  `,
+<p>
+Moderne Sicherheitsstrukturen sind arbeitsteilig organisiert. Unterschiedliche
+Bereiche übernehmen klar definierte Aufgaben und greifen ineinander. Diese
+Differenzierung ermöglicht Effizienz und verhindert Machtkonzentration.
+</p>
 
-  einsatz: `
-    <section class="section">
-      <h1>Einsätze & Verantwortung</h1>
+<p>
+Neben klassischen Einsatzkräften spielen unterstützende Strukturen eine zentrale
+Rolle. Logistik, Ausbildung, Analyse und technische Entwicklung sind entscheidend
+für nachhaltige Handlungsfähigkeit.
+</p>
 
-      <p>
-        Einsätze außerhalb des eigenen Staatsgebiets sind immer mit besonderer
-        Verantwortung verbunden. Sie erfolgen auf Grundlage internationaler
-        Mandate und politischer Beschlüsse.
-      </p>
+<p>
+Die klare Trennung von Zuständigkeiten gewährleistet, dass jede Maßnahme rechtlich
+eingeordnet und fachlich begründet ist.
+</p>
+</section>
+`,
 
-      <p>
-        Neben militärischen Aspekten spielen humanitäre, diplomatische und
-        gesellschaftliche Faktoren eine zentrale Rolle.
-      </p>
-    </section>
-  `,
+einsatz: `
+<section class="section einsatz">
+<h1>Einsätze & Verantwortung</h1>
 
-  zukunft: `
-    <section class="section">
-      <h1>Zukunft & Sicherheit</h1>
+<p>
+Einsätze erfolgen niemals isoliert, sondern im Rahmen politischer Entscheidungen
+und internationaler Verpflichtungen. Sie sind stets mit Verantwortung verbunden –
+gegenüber der eigenen Bevölkerung, internationalen Partnern und der Zivilbevölkerung
+vor Ort.
+</p>
 
-      <p>
-        Die sicherheitspolitischen Herausforderungen der Zukunft sind geprägt
-        von Unsicherheit, Geschwindigkeit und technologischer Entwicklung.
-      </p>
+<p>
+Neben militärischen Aspekten spielen humanitäre, diplomatische und gesellschaftliche
+Faktoren eine zentrale Rolle. Nachhaltige Stabilisierung erfordert mehr als reine
+Sicherheitsmaßnahmen.
+</p>
 
-      <p>
-        Entscheidend wird sein, Sicherheit so zu gestalten, dass sie schützt,
-        ohne Freiheit einzuschränken.
-      </p>
-    </section>
-  `
+<p>
+Der Schutz von Zivilisten und die Einhaltung des Völkerrechts stehen im Mittelpunkt
+jedes Einsatzes.
+</p>
+</section>
+`,
+
+zukunft: `
+<section class="section zukunft">
+<h1>Zukunft & Sicherheit</h1>
+
+<p>
+Die sicherheitspolitischen Herausforderungen der Zukunft sind geprägt von
+technologischem Fortschritt, globaler Vernetzung und zunehmender Unvorhersehbarkeit.
+Künstliche Intelligenz, autonome Systeme und Cyberfähigkeiten verändern die
+Rahmenbedingungen grundlegend.
+</p>
+
+<p>
+Gleichzeitig bleibt der Mensch zentraler Bezugspunkt sicherheitspolitischen Handelns.
+Technologie kann unterstützen, ersetzt jedoch nicht Verantwortung, Urteilskraft
+und ethische Reflexion.
+</p>
+
+<p>
+Zukünftige Sicherheit wird daran gemessen werden, ob sie Schutz bietet, ohne Freiheit
+zu untergraben – und Stabilität schafft, ohne gesellschaftliche Offenheit zu gefährden.
+</p>
+</section>
+`
 };
 
 function loadPage(page){
   content.innerHTML = pages[page];
-  history.pushState({page}, "", "#" + page);
+  history.pushState({page},"","#"+page);
 }
 
-document.querySelectorAll("button[data-page]").forEach(btn=>{
-  btn.addEventListener("click", ()=>{
-    loadPage(btn.dataset.page);
-  });
+document.querySelectorAll("button").forEach(btn=>{
+  btn.onclick=()=>loadPage(btn.dataset.page);
 });
 
-window.onpopstate = e => {
-  if(e.state?.page){
-    content.innerHTML = pages[e.state.page];
-  }
+window.onpopstate=e=>{
+  if(e.state?.page) content.innerHTML=pages[e.state.page];
 };
 
 loadPage("overview");
-
