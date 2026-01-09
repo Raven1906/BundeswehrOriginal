@@ -1,139 +1,107 @@
 :root{
   --bg:#0b0f14;
-  --bg2:#141a20;
-
-  --camo1:#2f3e2f;
-  --camo2:#3b4a36;
-  --camo3:#1f2a1f;
-  --sand:#8b7d5a;
-
   --text:#e5e7eb;
-  --muted:#b6b8b2;
+  --muted:#b0b3ad;
+
+  --green:#3f5f3a;
+  --olive:#6b8e23;
+  --sand:#9c8b5e;
+  --steel:#6b7280;
+  --blue:#3b82f6;
 }
 
-/* RESET */
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family:Inter,system-ui,sans-serif;
   color:var(--text);
-  background:
-    radial-gradient(800px 400px at 20% 10%,rgba(47,62,47,.6),transparent),
-    radial-gradient(700px 500px at 80% 90%,rgba(59,74,54,.6),transparent),
-    linear-gradient(180deg,var(--bg),var(--bg2));
-  overflow-x:hidden;
-}
-
-/* CAMO PATTERN (ANIMIERT!) */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  opacity:.35;
-  background-image:
-    radial-gradient(circle at 20% 30%,var(--camo1) 20%,transparent 22%),
-    radial-gradient(circle at 60% 40%,var(--camo2) 18%,transparent 20%),
-    radial-gradient(circle at 40% 70%,var(--camo3) 22%,transparent 24%),
-    radial-gradient(circle at 80% 60%,var(--sand) 10%,transparent 12%);
-  background-size:400px 400px;
-  animation:camoDrift 60s linear infinite;
-}
-
-@keyframes camoDrift{
-  from{transform:translate(0,0)}
-  to{transform:translate(-200px,200px)}
+  background:linear-gradient(180deg,#0b0f14,#141a20);
 }
 
 /* HEADER */
 header{
   position:sticky;
   top:0;
-  background:rgba(11,15,20,.85);
+  background:rgba(10,15,20,.85);
   backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.1);
 }
-
 nav{
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
   padding:1rem 1.5rem;
   display:flex;
   gap:.5rem;
 }
-
 nav button{
   background:none;
   border:none;
   color:var(--muted);
   padding:.6rem 1rem;
   cursor:pointer;
-  font-size:.95rem;
-  letter-spacing:.3px;
-  position:relative;
 }
-
-nav button::after{
-  content:"";
-  position:absolute;
-  left:0;right:0;bottom:-6px;
-  height:2px;
-  background:linear-gradient(90deg,var(--camo1),var(--sand));
-  transform:scaleX(0);
-  transition:.3s;
-}
-
-nav button:hover{
-  color:var(--text);
-}
-
-nav button:hover::after{
-  transform:scaleX(1);
-}
+nav button:hover{color:var(--text)}
 
 /* MAIN */
 main{
   max-width:1000px;
   margin:auto;
-  padding:3rem 1.5rem 6rem;
+  padding:4rem 1.5rem 6rem;
 }
 
-/* SECTION */
+/* SECTIONS – Grundform */
 .section{
-  background:rgba(20,26,32,.85);
-  border:1px solid rgba(255,255,255,.1);
-  padding:3rem;
+  padding:4rem;
   margin-bottom:4rem;
-  position:relative;
-  animation:reveal .8s ease both;
+  animation:fadeUp .8s ease both;
 }
-
-/* Seiten-spezifische Akzente */
-.section.overview{border-left:6px solid var(--camo1)}
-.section.auftrag{border-left:6px solid var(--sand)}
-.section.struktur{border-left:6px solid var(--camo2)}
-.section.einsatz{border-left:6px solid #6b7280}
-.section.zukunft{border-left:6px solid #9ca3af}
-
-/* Inhalt Animation */
-@keyframes reveal{
+@keyframes fadeUp{
   from{opacity:0;transform:translateY(40px)}
   to{opacity:1;transform:none}
 }
 
 .section h1{
+  font-size:3rem;
   margin-top:0;
-  font-size:2.4rem;
 }
-
 .section h2{
-  margin-top:2.5rem;
-  font-size:1.4rem;
-  color:#d1d5db;
+  margin-top:3rem;
+  font-size:1.7rem;
+}
+.section p{
+  max-width:70ch;
+  line-height:1.9;
+  font-size:1.15rem;
+  color:var(--muted);
 }
 
-.section p{
-  margin:1.2rem 0;
-  color:var(--muted);
-  line-height:1.85;
+/* INDIVIDUELLE SEITEN */
+.overview{background:rgba(47,62,47,.2);border-left:6px solid var(--green)}
+.auftrag{background:rgba(156,139,94,.2);border-left:6px solid var(--sand)}
+.struktur{background:rgba(63,95,58,.2);border-left:6px solid var(--olive)}
+.zukunft{background:rgba(59,130,246,.15);border-left:6px solid var(--blue)}
+
+/* PRO & CONTRA */
+.debatte{background:rgba(107,114,128,.2);border-left:6px solid var(--steel)}
+.choice{
+  display:flex;
+  gap:2rem;
+  margin:3rem 0;
 }
+.choice button{
+  flex:1;
+  padding:1.5rem;
+  font-size:1.1rem;
+  background:none;
+  border:1px solid rgba(255,255,255,.2);
+  color:var(--text);
+  cursor:pointer;
+}
+.choice button:hover{background:rgba(255,255,255,.05)}
+.result{
+  margin-top:3rem;
+  padding:2rem;
+  background:rgba(0,0,0,.3);
+  display:none;
+}
+
