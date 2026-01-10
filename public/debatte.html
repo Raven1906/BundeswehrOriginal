@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Pro & Contra – Sicherheit und Freiheit</title>
+  <link rel="stylesheet" href="debatte.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">Überblick</a>
+    <a href="auftrag.html">Auftrag & Werte</a>
+    <a href="struktur.html">Struktur</a>
+    <a href="debatte.html">Pro & Contra</a>
+    <a href="zukunft.html">Zukunft</a>
+  </nav>
+</header>
+
+<main>
+  <section class="intro">
+    <h1>Pro & Contra: Sicherheit und Freiheit</h1>
+    <p>
+      Sicherheitspolitische Entscheidungen sind selten eindeutig.
+      Sie bewegen sich fast immer im Spannungsfeld zwischen Schutz,
+      Freiheit, Verantwortung und Vertrauen.
+    </p>
+    <p>
+      Die folgenden Fragen laden dazu ein, eine eigene Position zu entwickeln.
+      Es gibt kein „richtig“ oder „falsch“ – entscheidend ist die bewusste
+      Auseinandersetzung mit den Argumenten.
+    </p>
+  </section>
+
+  <section class="questions">
+    <h2>Ihre Einschätzung</h2>
+
+    <div class="question" data-q="1">
+      <p>1. Sollte der Staat digitale Kommunikation stärker überwachen dürfen, um Anschläge zu verhindern?</p>
+      <button onclick="answer(1,'pro')">Eher PRO</button>
+      <button onclick="answer(1,'contra')">Eher CONTRA</button>
+    </div>
+
+    <div class="question" data-q="2">
+      <p>2. Ist mehr Videoüberwachung im öffentlichen Raum ein akzeptabler Preis für mehr Sicherheit?</p>
+      <button onclick="answer(2,'pro')">Eher PRO</button>
+      <button onclick="answer(2,'contra')">Eher CONTRA</button>
+    </div>
+
+    <div class="question" data-q="3">
+      <p>3. Sollte Sicherheit Vorrang haben, auch wenn Freiheitsrechte eingeschränkt werden?</p>
+      <button onclick="answer(3,'pro')">Eher PRO</button>
+      <button onclick="answer(3,'contra')">Eher CONTRA</button>
+    </div>
+
+    <div class="question" data-q="4">
+      <p>4. Dürfen militärische Mittel zur Stabilisierung fragiler Regionen eingesetzt werden?</p>
+      <button onclick="answer(4,'pro')">Eher PRO</button>
+      <button onclick="answer(4,'contra')">Eher CONTRA</button>
+    </div>
+
+    <div class="question" data-q="5">
+      <p>5. Ist eine stärkere internationale Vernetzung der Sicherheitsdienste notwendig?</p>
+      <button onclick="answer(5,'pro')">Eher PRO</button>
+      <button onclick="answer(5,'contra')">Eher CONTRA</button>
+    </div>
+
+    <div class="question" data-q="6">
+      <p>6. Sollte der Staat mehr Befugnisse zur Gefahrenprävention erhalten?</p>
+      <button onclick="answer(6,'pro')">Eher PRO</button>
+      <button onclick="answer(6,'contra')">Eher CONTRA</button>
+    </div>
+
+    <div class="question" data-q="7">
+      <p>7. Ist technologische Überlegenheit entscheidend für zukünftige Sicherheit?</p>
+      <button onclick="answer(7,'pro')">Eher PRO</button>
+      <button onclick="answer(7,'contra')">Eher CONTRA</button>
+    </div>
+
+    <div class="question" data-q="8">
+      <p>8. Sollte Sicherheitspolitik stärker öffentlich diskutiert werden?</p>
+      <button onclick="answer(8,'pro')">Eher PRO</button>
+      <button onclick="answer(8,'contra')">Eher CONTRA</button>
+    </div>
+
+    <div class="question" data-q="9">
+      <p>9. Ist absolute Sicherheit überhaupt erreichbar?</p>
+      <button onclick="answer(9,'pro')">Eher PRO</button>
+      <button onclick="answer(9,'contra')">Eher CONTRA</button>
+    </div>
+
+    <div class="question" data-q="10">
+      <p>10. Sollte Freiheit im Zweifel immer Vorrang vor Sicherheit haben?</p>
+      <button onclick="answer(10,'pro')">Eher PRO</button>
+      <button onclick="answer(10,'contra')">Eher CONTRA</button>
+    </div>
+  </section>
+
+  <section class="result" id="result">
+    <h2>Auswertung</h2>
+    <p id="summary"></p>
+  </section>
+</main>
+
+<script src="debatte.js"></script>
+</body>
+</html>
