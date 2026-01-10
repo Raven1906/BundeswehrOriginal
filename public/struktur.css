@@ -1,0 +1,116 @@
+:root{
+  --bg:#0a0d12;
+  --panel:#11161d;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#60a5fa;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    var(--bg);
+  background-size:60px 60px;
+  color:var(--text);
+}
+
+/* Header */
+header{
+  position:sticky;
+  top:0;
+  background:rgba(10,13,18,.9);
+}
+nav{
+  max-width:1200px;
+  margin:auto;
+  padding:1rem 1.5rem;
+}
+nav a{
+  color:var(--muted);
+  margin-right:1.2rem;
+  text-decoration:none;
+}
+nav a.active,
+nav a:hover{color:var(--text)}
+
+/* Layout */
+main{
+  max-width:1200px;
+  margin:auto;
+  padding:5rem 1.5rem 7rem;
+}
+
+.intro h1{
+  font-size:clamp(3rem,6vw,4rem);
+}
+.intro p{
+  font-size:1.4rem;
+  max-width:65ch;
+  color:var(--muted);
+}
+
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:3rem;
+  margin:5rem 0;
+}
+
+.level{
+  background:var(--panel);
+  padding:3rem;
+  border-radius:20px;
+  border-top:6px solid var(--accent);
+  animation:rise .8s ease both;
+}
+
+.level h2{
+  font-size:2rem;
+  margin-bottom:1rem;
+  color:var(--accent);
+}
+
+.level p{
+  font-size:1.2rem;
+  line-height:1.9;
+}
+
+/* Sections */
+.flow,
+.responsibility{
+  margin-top:5rem;
+  padding:4rem;
+  background:linear-gradient(180deg,rgba(255,255,255,.05),transparent);
+  border-radius:24px;
+  animation:fadeIn .8s ease both;
+}
+
+.flow h2,
+.responsibility h2{
+  font-size:2.4rem;
+  margin-bottom:1.5rem;
+}
+
+.flow p,
+.responsibility p{
+  font-size:1.3rem;
+  max-width:75ch;
+  line-height:1.9;
+}
+
+/* Animations */
+@keyframes rise{
+  from{opacity:0;transform:translateY(50px)}
+  to{opacity:1;transform:none}
+}
+
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
